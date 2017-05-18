@@ -21,7 +21,8 @@ d3.json("miserables.json", function(error, graph) {
     .enter().append("line")
     .attr("stroke-width", function(d) {
       return Math.sqrt(d.value);
-    });
+    })
+    .attr("opacity", "0.3");
 
   var node = svg.append("g")
     .attr("class", "nodes")
@@ -41,6 +42,25 @@ d3.json("miserables.json", function(error, graph) {
     .text(function(d) {
       return d.id;
     });
+
+  function animNode(d) {
+    d3.select(this)
+      .transition()
+      .duration(function(d) {
+        return (Math.random() * 5) * 1000;
+      })
+      .attr("stroke-width", 1)
+      .attr("r", 5)
+      .attr("opacity", "1")
+      .transition()
+      .duration(2000)
+      .attr('stroke-width', 0.5)
+      .attr("r", 20)
+      .attr("opacity", "0.3")
+      .on("end", animNode);
+  }
+
+  node.each(animNode);
 
   simulation
     .nodes(graph.nodes)

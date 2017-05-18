@@ -1,12 +1,12 @@
 
 # Firebase-d3
 
-Basic Firebase web app with simple d3.js
+Basic Firebase web app with simple d3.js with pulsating circles.
 
 
 Commands:
 
-    #create new project in Firecabase console
+    #create new project in Firebase console
 
     # initialize project files:
     firebase init
