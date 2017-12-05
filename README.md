@@ -3,6 +3,7 @@
 
 Basic Firebase web app with simple d3.js with pulsating circles.
 
+![Screenshot](docs/screenshot.png)
 
 Commands:
 
